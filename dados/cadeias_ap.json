@@ -1,0 +1,20 @@
+[
+  {"entrada": "ACGaaaaCGU#A.C.U.G", "esperado": true, "regra": "Menor cadeia aceita: haste 3, laço 4, quatro blocos de 1 base"},
+  {"entrada": "GCAUCaaaaGAUGC#AC.GG.GU.CC", "esperado": true, "regra": "Cadeia de referência"},
+  {"entrada": "GGCCuuuuGGCC#A.C.G.U", "esperado": true, "regra": "Haste GGCC com laço uuuu"},
+  {"entrada": "UAGCaccgGCUA#AC.CA.UG.GU", "esperado": true, "regra": "Laço misto accg"},
+  {"entrada": "CGAUGcguaaCAUCG#G.A.U.C", "esperado": true, "regra": "Laço de 5 letras"},
+  {"entrada": "AAAuuuuUUU#AAAA.CC.GG.UU", "esperado": true, "regra": "Haste de A fecha com U"},
+  {"entrada": "GCGCgggggGCGC#ACGU.AC.GU.CA", "esperado": true, "regra": "Haste GCGC com laço ggggg"},
+  {"entrada": "UGCAUcguacAUGCA#A.A.U.U", "esperado": true, "regra": "Haste UGCAU com laço cguac"},
+  {"entrada": "ACGaaaaCGA#A.C.U.G", "esperado": false, "regra": "Pareamento do último par incorreto"},
+  {"entrada": "ACaaaaaaGU#AC.GG.GU.CC", "esperado": false, "regra": "Haste com menos de 3 pares"},
+  {"entrada": "GCAUCaaaGAUGC#AC.GG.GU.CC", "esperado": false, "regra": "Laço com menos de 4 letras"},
+  {"entrada": "GCAUCaaaaGAUGCAC.GG.GU.CC", "esperado": false, "regra": "Ausência do separador #"},
+  {"entrada": "GCAUCaaaaGAUG#AC.GG.GU.CC", "esperado": false, "regra": "Fecho mais curto que a haste"},
+  {"entrada": "GCAUCaaaaGAUGC#AC..GU.CC", "esperado": false, "regra": "Bloco vazio entre separadores"},
+  {"entrada": "GCAUCaaaaGAUGC#AC.GG.GU", "esperado": false, "regra": "Apenas três blocos"},
+  {"entrada": "GCAUCaaaaGAUGCC#AC.GG.GU.CC", "esperado": false, "regra": "Fecho mais longo que a haste"},
+  {"entrada": "aaaaGCAUCGAUGC#AC.GG.GU.CC", "esperado": false, "regra": "Começa pelo laço, sem haste"},
+  {"entrada": "GCAUCaaaaGAUGC#AC.GG#GU.CC", "esperado": false, "regra": "Segundo # no lugar de separador"}
+]
