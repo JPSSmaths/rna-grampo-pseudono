@@ -1,0 +1,5 @@
+[
+  {"entrada": "GCAUCaaaaGAUGC#AC.GG.GU.CC", "esperado": "aceita", "regra": "Cenário 1: grampo válido e pseudonó com x = AC e y = GG, aceita nos dois módulos"},
+  {"entrada": "GCAUCaaaaGAUGA#AC.GG.GU.CC", "esperado": "rejeitada_no_ap", "regra": "Cenário 2: último par da haste C–A não é complementar, AP rejeita e o ALL não executa"},
+  {"entrada": "GCAUCaaaaGAUGC#AC.GG.GU.GG", "esperado": "rejeitada_no_all", "regra": "Cenário 3: grampo válido, mas B4 = GG não é o complemento reverso de B2 = GG, ALL rejeita"}
+]
