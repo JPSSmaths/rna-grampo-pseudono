@@ -2,8 +2,8 @@
 
 Aplicação em Python e Streamlit para validação de cadeias de RNA em duas etapas sequenciais:
 
-1. **Etapa 1 — Grampo (Autômato de Pilha determinístico):** verifica se a entrada pertence à linguagem livre de contexto $L_1 = w\,\ell\,\bar{w}^R\#B_1.B_2.B_3.B_4$, com $\vert{}w\vert{} \ge 3$, $\vert{}\ell\vert{} \ge 4$ e cada $B_i \in \{A, C, G, U\}^+$.
-2. **Etapa 2 — Pseudonó (Autômato Linearmente Limitado determinístico):** executada somente quando o AP aceita, verifica se o trecho após `#` pertence à linguagem sensível ao contexto $L_2 = x.y.\bar{x}^R.\bar{y}^R$, com $x, y \in \{A, C, G, U\}^+$.
+1. **Etapa 1 — Grampo (Autômato de Pilha determinístico):** verifica se a entrada pertence à linguagem livre de contexto $`L_1 = w\,\ell\,\bar{w}^R\#B_1.B_2.B_3.B_4`$, com $`\vert{}w\vert{} \ge 3`$, $`\vert{}\ell\vert{} \ge 4`$ e cada $`B_i \in \{A, C, G, U\}^+`$.
+2. **Etapa 2 — Pseudonó (Autômato Linearmente Limitado determinístico):** executada somente quando o AP aceita, verifica se o trecho após `#` pertence à linguagem sensível ao contexto $`L_2 = x.y.\bar{x}^R.\bar{y}^R`$, com $`x, y \in \{A, C, G, U\}^+`$.
 
 Cadeia de referência, aceita pelos dois módulos (26 caracteres): `GCAUCaaaaGAUGC#AC.GG.GU.CC`.
 
@@ -66,7 +66,7 @@ Uma cadeia com símbolo fora do alfabeto (por exemplo, `X` ou espaço no meio) n
 - **AP:** 17 estados (`q0` a `q16`), pilha com `Z0` e o complemento de cada base da haste, aceitação por estado final (`q16`) com a entrada consumida por inteiro. Cada transição consome um símbolo, então termina em no máximo n passos.
 - **ALL:** 35 estados, fita `⊢ c1 … cn ⊣` com n células graváveis e dois marcadores fixos. Primeiro renumera os três separadores (①②③) e rejeita bloco vazio; depois pareia B1 com B3 e B2 com B4, marcando com `×` cada base pareada. A memória de trabalho cabe na fita e nos estados. Cada volta marca pelo menos duas células, então termina em O(n²) passos.
 - **Determinismo:** os dois autômatos são determinísticos. Uma combinação sem transição definida rejeita a cadeia.
-- **Classificação:** $L_1$ é livre de contexto e não é regular. $L_2$ não é livre de contexto, pois a interseção com `A⁺.C⁺.U⁺.G⁺` resulta em $\{A^n.C^m.U^n.G^m\}$.
+- **Classificação:** $`L_1`$ é livre de contexto e não é regular. $`L_2`$ não é livre de contexto, pois a interseção com `A⁺.C⁺.U⁺.G⁺` resulta em $`\{A^n.C^m.U^n.G^m\}`$.
 
 ## Estrutura do repositório
 
