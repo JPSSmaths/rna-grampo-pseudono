@@ -1,0 +1,21 @@
+[
+  {"entrada": "ACGUA.GCA.UACGU.UGC", "esperado": true, "regra": "Menor entrada aceita com n ≥ 18 (n = 19)"},
+  {"entrada": "GGCCA.UAU.UGGCC.AUA", "esperado": true, "regra": "B1/B3 e B2/B4 complementares reversos (n = 19)"},
+  {"entrada": "UUUUU.AAA.AAAAA.UUU", "esperado": true, "regra": "Blocos homopoliméricos (n = 19)"},
+  {"entrada": "CGCGCG.AU.CGCGCG.AU", "esperado": true, "regra": "Blocos de tamanhos 6 e 2 (n = 19)"},
+  {"entrada": "GAUC.ACGUU.GAUC.AACGU", "esperado": true, "regra": "x palindrômico complementar (n = 21)"},
+  {"entrada": "A.CCCCCCCC.U.GGGGGGGG", "esperado": true, "regra": "Blocos de tamanhos 1 e 8 (n = 21)"},
+  {"entrada": "GGGGGGGG.U.CCCCCCCC.A", "esperado": true, "regra": "Blocos de tamanhos 8 e 1 (n = 21)"},
+  {"entrada": "UGA.CGUACG.UCA.CGUACG", "esperado": true, "regra": "y palindrômico complementar (n = 21)"},
+  {"entrada": "ACGUAA.GCA.UACGU.UGC", "esperado": false, "regra": "B1 maior que B3"},
+  {"entrada": "ACGUA.GCA.AUGCA.UGC", "esperado": false, "regra": "B3 só revertido, sem complemento"},
+  {"entrada": "ACGUA.GCA.ACGUA.UGC", "esperado": false, "regra": "B3 igual a B1, sem reverso complementar"},
+  {"entrada": "ACGUA.GCA.UACGU.UGG", "esperado": false, "regra": "B4 não é o complemento reverso de B2"},
+  {"entrada": "ACGUA.GCA.UGC.UACGU", "esperado": false, "regra": "B3 e B4 trocados"},
+  {"entrada": "ACGUA.GCA.UACGU.AUGC", "esperado": false, "regra": "B4 com base sobrando"},
+  {"entrada": "ACGUA.GCA.UACGUUGC", "esperado": false, "regra": "Falta um separador"},
+  {"entrada": "ACGUA.GCA.UACGU.UG.C", "esperado": false, "regra": "Separador a mais"},
+  {"entrada": ".ACGUA.GCA.UACGU.UGC", "esperado": false, "regra": "Separador no início"},
+  {"entrada": "ACGUA.GCA.UACGU.UGC.", "esperado": false, "regra": "Separador no fim"},
+  {"entrada": "ACGUACGUAC..GUACGUACGU.", "esperado": false, "regra": "Blocos B2 e B4 vazios"}
+]
