@@ -1,0 +1,12 @@
+[
+  {
+    "entrada": "GCAUCaaaaGAUGC#AC.GG.GX.CC",
+    "mensagem_esperada": "Símbolo 'X' na posição 23 não pertence ao alfabeto {#, ., A, C, G, U, a, c, g, u}",
+    "regra": "Símbolo fora do alfabeto de entrada"
+  },
+  {
+    "entrada": "GCAUCaaaaGAUGC #AC.GG.GU.CC",
+    "mensagem_esperada": "Símbolo ' ' na posição 15 não pertence ao alfabeto {#, ., A, C, G, U, a, c, g, u}",
+    "regra": "Espaço no meio da cadeia"
+  }
+]
