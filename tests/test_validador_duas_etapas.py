@@ -79,3 +79,10 @@ def test_conferencia_registra_entrada_decisoes_e_regra():
 def test_nenhuma_cadeia_dos_dados_tem_menos_de_18_caracteres(arquivo):
     registros = json.loads(arquivo.read_text(encoding="utf-8"))
     assert all(len(registro["entrada"]) >= 18 for registro in registros)
+
+
+def test_conferencia_inclui_o_modulo_de_alfabeto_com_a_mensagem_de_erro():
+    linhas = conferir_registros("Alfabeto")
+    assert len(linhas) == 2
+    assert all(linha.aprovado for linha in linhas)
+    assert linhas[0].obtido == "erro: Símbolo 'X' na posição 23 não pertence ao alfabeto {#, ., A, C, G, U, a, c, g, u}"

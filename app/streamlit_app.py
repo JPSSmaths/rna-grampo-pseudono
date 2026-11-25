@@ -213,7 +213,7 @@ def pagina_do_validador() -> None:
         "Cadeia de entrada",
         key="entrada",
         help="Haste em maiúsculas, laço em minúsculas, '#' e quatro blocos separados por '.'",
-    )
+    ).strip()
     st.caption(f"{len(entrada)} caracteres · Σ = {{{', '.join(sorted(ALFABETO_ENTRADA))}}}")
     if not entrada:
         st.info("Digite uma cadeia ou escolha um exemplo.")
